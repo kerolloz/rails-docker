@@ -5,7 +5,7 @@
 I used PostgreSQL to keep a table of _posts_.  
 I used Redis to keep a simple counter of _welcome_ page views.
 
-For sure you need to have [Docker](docker.io) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+For sure you need to have [Docker](https://docker.io) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
 Use the following command to run the app on [localhost:3000](localhost:3000)
 ```sh
