@@ -12,8 +12,10 @@ Use the following command to run the app on [localhost:3000](localhost:3000)
 docker-compose up -d
 ```
 
-On [localhost:3000/welcome](localhost:3000/welcome) you should get
+On [localhost:3000/welcome](localhost:3000/welcome) you should get  
+![welcome pic](screenshots/welcome.png)  
 
-On [localhost:3000/posts](localhost:3000/posts) you should get
+On [localhost:3000/posts](localhost:3000/posts) you should get  
+![welcome pic](screenshots/posts.png)
 
 You can find out more at https://docs.docker.com/compose/rails.
