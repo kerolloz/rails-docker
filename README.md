@@ -12,8 +12,8 @@ Use the following command to run the app on [localhost:3000](localhost:3000)
 docker-compose up -d
 ```
 
-On [localhost:3000/welcome](localhost:3000/welcome) you should get
+On [localhost:3000/welcome](http://localhost:3000/welcome) you should get something like
 
-On [localhost:3000/posts](localhost:3000/posts) you should get
+On [localhost:3000/posts](http://localhost:3000/posts) you should get something like
 
 You can find out more at https://docs.docker.com/compose/rails.
