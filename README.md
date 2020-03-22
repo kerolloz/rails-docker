@@ -18,15 +18,21 @@ docker-compose up -d
 ```
 
 On [localhost:3000/welcome](localhost:3000/welcome) you should get  
-![welcome pic](screenshots/welcome.png)
+<p align="center">
+<img alt="welcome pic" src="screenshots/welcome.png">
+</p>
 
 On [localhost:3000/posts](localhost:3000/posts) you should get  
-![welcome pic](screenshots/posts.png)
+<p align="center">
+<img alt="welcome pic" src="screenshots/posts.png">
+</p>
 
 Stop the app using `docker-compose down`!
 
 ## Diagram
 
-![diagram](screenshots/diagram.png)
+<p align="center">
+<img alt="welcome pic" src="screenshots/diagram.png">
+</p>
 
 You can find out more at <https://docs.docker.com/compose/rails>.
