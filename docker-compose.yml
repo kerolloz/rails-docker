@@ -13,6 +13,7 @@ services:
       - .env/development/database
     depends_on:
       - db
+      - redis
 
   redis:
     image: redis:alpine
