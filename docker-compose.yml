@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   web:
@@ -15,7 +15,7 @@ services:
       - db
 
   redis:
-    image: redis
+    image: redis:alpine
 
   db:
     image: postgres:alpine
