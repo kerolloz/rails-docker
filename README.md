@@ -17,14 +17,22 @@ Use the following command to run the app on [localhost:3000](localhost:3000)
 docker-compose up -d
 ```
 
-On [localhost:3000/welcome](localhost:3000/welcome) you should get  
+Use the following commad to migrate the database changes and seed with data
+
+```sh
+docker-compose exec web rake db:migrate db:seed
+```
+
+On <http://localhost:3000/> you should get
+
 <p align="center">
-<img alt="welcome pic" src="screenshots/welcome.png">
+  <img alt="welcome screenshot" src="screenshots/welcome.png">
 </p>
 
-On [localhost:3000/posts](localhost:3000/posts) you should get  
+On <http://localhost:3000/welcome> you should get
+
 <p align="center">
-<img alt="welcome pic" src="screenshots/posts.png">
+  <img alt="posts screenshot" src="screenshots/posts.png">
 </p>
 
 Stop the app using `docker-compose down`!
@@ -32,7 +40,7 @@ Stop the app using `docker-compose down`!
 ## Diagram
 
 <p align="center">
-<img alt="welcome pic" src="screenshots/diagram.png">
+  <img alt="diagram image" src="screenshots/diagram.png">
 </p>
 
 You can find out more at <https://docs.docker.com/compose/rails>.
