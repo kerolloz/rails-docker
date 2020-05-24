@@ -1,22 +1,21 @@
-FROM ruby
+FROM ruby:alpine
 
-RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
-    apt-transport-https
+RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/http\:\/\/mirror.clarkson.edu/g' /etc/apk/repositories
+RUN apk add --update \
+    yarn build-base tzdata \
+    postgresql-dev 
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-# Ensure latest packages for Yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | \
-    tee /etc/apt/sources.list.d/yarn.list
-# Install packages
-RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends \
-    nodejs \
-    yarn
-
-COPY Gemfile* /usr/src/app/
-WORKDIR /usr/src/app
 ENV BUNDLE_PATH /gems​
-RUN bundle install
-COPY . /usr/src/app/
-RUN yarn install
+
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+RUN bundle check || bundle install
+
+COPY package.json yarn.lock ./
+RUN yarn install --check-files
+
+COPY . ./
+
+ENTRYPOINT [ "./entrypoint.sh" ]
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
