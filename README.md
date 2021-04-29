@@ -39,13 +39,12 @@ Stop the app using `docker-compose down`!
 
 ## Testing
 
-<a href="https://travis-ci.com/kerolloz/rails-docker">
-    <img src="https://travis-ci.com/kerolloz/rails-docker.svg?branch=master">
-</a>
+[![Ruby](https://github.com/kerolloz/rails-docker/actions/workflows/testing-with-docker.yml/badge.svg)](https://github.com/kerolloz/rails-docker/actions/workflows/testing-with-docker.yml)
 
 ```bash
 docker-compose up -d
 docker-compose run -e "RAILS_ENV=test" web bin/rake db:create db:migrate
+docker-compose run -e "RAILS_ENV=test" web bin/rake assets:precompile
 docker-compose run -e "RAILS_ENV=test" web bin/rake test
 ```
 
