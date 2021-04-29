@@ -1,6 +1,6 @@
 # Docker Rails
 
-> The purpose of this very simple web-app is to apply some of the knowledge I learned from [Docker for Rails Developers](https://pragprog.com/book/ridocker/docker-for-rails-developers) book _by Rob Isenberg_.
+> The purpose of this very simple web app is to apply some of the knowledge I learned from [Docker for Rails Developers](https://pragprog.com/book/ridocker/docker-for-rails-developers) book _by Rob Isenberg_.
 
 I used _PostgreSQL_ to keep a table of _posts_.  
 I used _Redis_ to keep a simple counter of _welcome_ page views.
@@ -20,7 +20,7 @@ docker-compose up -d
 Use the following commad to migrate the database changes and seed with data
 
 ```sh
-docker-compose exec web rake db:migrate db:seed
+docker-compose exec web bundle exec rake db:migrate db:seed
 ```
 
 On <http://localhost:3000/> you should get
@@ -36,6 +36,18 @@ On <http://localhost:3000/welcome> you should get
 </p>
 
 Stop the app using `docker-compose down`!
+
+## Testing
+
+<a href="https://travis-ci.com/kerolloz/rails-docker">
+    <img src="https://travis-ci.com/kerolloz/rails-docker.svg?branch=master">
+</a>
+
+```bash
+docker-compose up -d
+docker-compose run -e "RAILS_ENV=test" web bin/rake db:create db:migrate
+docker-compose run -e "RAILS_ENV=test" web bin/rake test
+```
 
 ## Diagram
 
